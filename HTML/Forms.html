@@ -6,6 +6,48 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <form action="/submit" method="POST" novalidate>
+        <!-- First line explain that it sends a post request to /submit api no validation is happening behind the scene -->
+
+  <fieldset> 
+    <!-- Field set is a tag that is used to keep things in group inside forms -->
+    <legend>Personal Information</legend>
+    <!-- Lengend tag is used to give caption/heading name to that indiviual group  -->
+
+    <div class="form-group">
+      <label for="full-name">Full name <span aria-hidden="true">*</span></label>
+      <input
+        type="text"
+        id="full-name"
+        name="fullName"
+        required
+        autocomplete="name"
+        aria-required="true"
+        aria-describedby="name-hint"
+      >
+      <span id="name-hint">Enter your name as it appears on official documents</span>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email address</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        autocomplete="email"
+        required
+      >
+    </div>
+
+    <fieldset>
+      <legend>Preferred contact method</legend>
+      <label><input type="radio" name="contact" value="email"> Email</label>
+      <label><input type="radio" name="contact" value="phone"> Phone</label>
+    </fieldset>
+
+  </fieldset>
+
+  <button type="submit">Submit form</button>
+</form>
 </body>
 </html>
